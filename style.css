@@ -1,0 +1,124 @@
+style.css
+/* Basic Styling for GyanSetu Classes website */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: url('images/gyansetu-logo.png') no-repeat center center fixed;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Watermark logo on right center */
+.page-watermark {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header */
+header {
+    background-color: #e0f7fa;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #0277bd;
+}
+header nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #0277bd;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+header nav a:hover {
+    color: #01579b;
+}
+
+/* Main Section */
+main {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+main h2 {
+    margin-top: 0;
+    color: #0288d1;
+}
+
+/* Footer */
+footer {
+    background-color: #b3e5fc;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #01579b;
+    margin-top: 20px;
+    border-top: 2px solid #81d4fa;
+}
+
+/* Gallery Images */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.gallery img {
+    max-width: 280px;
+    height: auto;
+    border: 3px solid #0288d1;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Forms */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+form label {
+    font-weight: bold;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+button, input[type="submit"] {
+    background: linear-gradient(90deg, #0288d1 0%, #26c6da 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+button:hover, input[type="submit"]:hover {
+    background: linear-gradient(90deg, #01579b 0%, #00acc1 100%);
+}
