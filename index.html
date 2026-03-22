@@ -89,41 +89,28 @@
 
   </div>
 
-<!-- Right side: Video + Images -->
-<div style="flex: 1; min-width: 300px; text-align: center;">
 
-  <!-- Autoplay Video -->
-<!-- Autoplay Video -->
-<video
-<video
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  controls
-  style="
-    width: 100%;
-    height: 360px;
-    object-fit: contain;
-    background: #000;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  ">
-  <source src="images/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
-  <!-- Images -->
-  <img src="images/dummy-education.jpg"
-       alt="GyanSetu Classes"
-       style="max-width: 100%; border-radius: 10px; margin-bottom: 15px;">
+<!-- Right side: Local Video + Images -->
+  <div class="right-media">
 
-  <img src="images/class1.jpg"
-       alt="Classroom"
-       style="max-width: 100%; border-radius: 10px;">
+    <!-- ✅ LOCAL AUTOPLAY VIDEO -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      controls>
+      <source src="images/demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-</div>
+    <img src="images/dummy-education.jpg" alt="GyanSetu Classes">
+    <img src="images/class1.jpg" alt="Classroom">
+
+  </div>
+
 
 </main>
 
@@ -137,22 +124,7 @@
   <a href="https://forms.gle/QeKSN66hKAYf7AKV6" class="register-button">Register Now</a>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.querySelector(".right-media video");
 
-  if (video) {
-    video.muted = true;
-    video.setAttribute("playsinline", "");
-    video.play().catch(function () {
-      // Autoplay blocked – will play on first user interaction
-      document.addEventListener("click", function () {
-        video.play();
-      }, { once: true });
-    });
-  }
-});
-</script>
 
 </body>
 </html>
