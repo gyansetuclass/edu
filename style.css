@@ -1,16 +1,19 @@
-style.css
 /* Basic Styling for GyanSetu Classes website */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background: url('images/gyansetu-logo.png') no-repeat center center fixed;
-    background-size: 500px;
+    background-color: #ffffff;
+    background-image: url('images/gyansetu-logo.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    background-color: #ffffff;
+    background-size: 500px;
     color: #333333;
 }
 
@@ -34,11 +37,13 @@ header {
     align-items: center;
     justify-content: space-between;
 }
+
 header h1 {
     margin: 0;
     font-size: 1.8em;
     color: #0277bd;
 }
+
 header nav a {
     margin: 0 12px;
     text-decoration: none;
@@ -47,6 +52,7 @@ header nav a {
     font-size: 1em;
     transition: color 0.3s;
 }
+
 header nav a:hover {
     color: #01579b;
 }
@@ -59,7 +65,9 @@ main {
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow-x: hidden; /* prevents image/video overflow */
 }
+
 main h2 {
     margin-top: 0;
     color: #0288d1;
@@ -83,6 +91,7 @@ footer {
     justify-content: center;
     gap: 15px;
 }
+
 .gallery img {
     max-width: 280px;
     height: auto;
@@ -90,6 +99,7 @@ footer {
     border-radius: 8px;
     transition: transform 0.3s;
 }
+
 .gallery img:hover {
     transform: scale(1.05);
 }
@@ -99,19 +109,24 @@ form {
     max-width: 500px;
     margin: 20px auto;
 }
+
 form label {
     font-weight: bold;
 }
-form input, form textarea {
+
+form input,
+form textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0 20px 0;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
-button, input[type="submit"] {
+
+button,
+input[type="submit"] {
     background: linear-gradient(90deg, #0288d1 0%, #26c6da 100%);
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 12px 25px;
     border-radius: 6px;
@@ -119,6 +134,37 @@ button, input[type="submit"] {
     font-size: 1em;
     transition: background 0.3s;
 }
-button:hover, input[type="submit"]:hover {
+
+button:hover,
+input[type="submit"]:hover {
     background: linear-gradient(90deg, #01579b 0%, #00acc1 100%);
+}
+
+/* Right column media (video + images) */
+.right-media {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Ensure images never stretch */
+.right-media img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Video styling */
+.right-media video {
+    width: 100%;
+    height: 380px;          /* increase/decrease as needed */
+    object-fit: contain;   /* prevents cropping */
+    background-color: #000;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
