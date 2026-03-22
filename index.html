@@ -137,5 +137,22 @@
   <a href="https://forms.gle/QeKSN66hKAYf7AKV6" class="register-button">Register Now</a>
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.querySelector(".right-media video");
+
+  if (video) {
+    video.muted = true;
+    video.setAttribute("playsinline", "");
+    video.play().catch(function () {
+      // Autoplay blocked – will play on first user interaction
+      document.addEventListener("click", function () {
+        video.play();
+      }, { once: true });
+    });
+  }
+});
+</script>
+
 </body>
 </html>
