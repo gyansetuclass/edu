@@ -9,24 +9,27 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #ffffff;
-    background-image: url('images/gyansetu-logo.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: 500px;
     color: #333333;
 }
 
-/* Watermark logo on right center */
+/* Watermark logo fixed on right side */
 .page-watermark {
     position: fixed;
-    right: 10px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 100px;
-    opacity: 0.15;
-    z-index: -1;
+    width: 120px;
+    opacity: 0.08;
+    z-index: 0;
     pointer-events: none;
+}
+
+/* Ensure content stays above watermark */
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* Header */
@@ -65,7 +68,7 @@ main {
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow-x: hidden; /* prevents image/video overflow */
+    overflow-x: hidden;
 }
 
 main h2 {
@@ -162,9 +165,30 @@ input[type="submit"]:hover {
 /* Video styling */
 .right-media video {
     width: 100%;
-    height: 380px;          /* increase/decrease as needed */
-    object-fit: contain;   /* prevents cropping */
+    height: 380px;
+    object-fit: contain;
     background-color: #000;
     border-radius: 10px;
     margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    header nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .right-media video {
+        height: 280px;
+    }
+
+    .page-watermark {
+        display: none;
+    }
 }
